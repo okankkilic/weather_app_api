@@ -28,7 +28,9 @@ class WeatherService {
     if (permission == LocationPermission.denied) {
       permission = await Geolocator.requestPermission();
     }
+
     Position position = await Geolocator.getCurrentPosition(
+        forceAndroidLocationManager: false,
         desiredAccuracy: LocationAccuracy.high);
 
     List<Placemark> placemarks =
@@ -36,6 +38,6 @@ class WeatherService {
 
     String? city = placemarks[0].locality;
 
-    return city ?? "";
+    return "Istanbul" ?? "";
   }
 }
