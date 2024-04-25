@@ -38,6 +38,6 @@ class WeatherService {
 
     String? city = placemarks[0].locality;
 
-    return "Istanbul" ?? "";
+    return "Bologna" ?? "";
   }
 }
